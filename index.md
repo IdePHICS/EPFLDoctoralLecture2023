@@ -1,3 +1,5 @@
+# Statistical Physics for Optimization and Learning
+
 ![epfl](https://upload.wikimedia.org/wikipedia/commons/f/f4/Logo_EPFL.svg)
 <img src="https://www.epfl.ch/labs/idephics/wp-content/uploads/2020/10/logo_idephics-1536x604.jpg" width="150"/>
 
