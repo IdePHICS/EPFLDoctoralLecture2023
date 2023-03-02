@@ -1,5 +1,5 @@
-# StatPhysOptiML.jl
+# Statistical Physics for Optimization and Learning
 
-Numerical illustrations for the course PHYS-642 at EPFL
+Website for the EPFL course PHYS-642
 
-Course page: https://edu.epfl.ch/coursebook/en/statistical-physics-for-optimization-learning-PHYS-642
+Catalogue page: https://edu.epfl.ch/coursebook/en/statistical-physics-for-optimization-learning-PHYS-642
