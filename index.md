@@ -3,9 +3,9 @@
 
 ## Staff
 
-Main lecturer: Pr. Florent Krzakala, head of [IdePHICS lab](https://www.epfl.ch/labs/idephics/) (with help from the amazing Pr. Lenka Zdeborova, head of [SPOC lab](https://www.epfl.ch/labs/spoc/))
+Main lecturer: Pr. Florent Krzakala, head of [IdePHICS lab](https://www.epfl.ch/labs/idephics/) (with help from the amazing Pr. Lenka Zdeborová, head of [SPOC lab](https://www.epfl.ch/labs/spoc/))
 
-Teaching assitants: [Yatin Dandi](https://yatindandi.github.io/), [Guillaume Dalle](https://gdalle.github.io/), [Luca Pesce](https://people.epfl.ch/luca.pesce?lang=en).
+Teaching assistants: [Yatin Dandi](https://yatindandi.github.io/), [Guillaume Dalle](https://gdalle.github.io/), [Luca Pesce](https://people.epfl.ch/luca.pesce?lang=en).
 
 ## Overview
 
@@ -33,21 +33,22 @@ Recorded lectures will be made avalible on [mediaspace](https://mediaspace.epfl.
 
 [Chapter 1-13](PHYS642.pdf) (still in construction)
 
-# Content 
+## Content 
 
-## Week1: The Curie-Weiss model
+### Week 1: The Curie-Weiss model
 
-We covered the Curie-Weiss model in Chap 1, as well as  Exercice 1.1 (Bounds on the binomial) and Exercice 1.5 (Glauber dynamics)
+We covered the Curie-Weiss model in Chap 1, as well as Exercise 1.1 (Bounds on the binomial) and Exercise 1.5 (Glauber dynamics)
 
-Julia Notebook :  [Curie-Weiss model](https://idephics.github.io/EPFLDoctoralLecture2023/curie_weiss.html)
+Julia Notebook:  [Curie-Weiss model](https://idephics.github.io/EPFLDoctoralLecture2023/curie_weiss.html)
 
 **Main lecture**
 
 <iframe id="kaltura_player" src="https://api.cast.switch.ch/p/113/sp/11300/embedIframeJs/uiconf_id/23448477/partner_id/113?iframeembed=true&playerId=kaltura_player&entry_id=0_pjt8ukl9&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_bc9cacbq" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="1. Curie Weiss Model"></iframe>
 
-
 **Mean-Field model in Julia**
+
 <iframe id="kaltura_player" src="https://api.cast.switch.ch/p/113/sp/11300/embedIframeJs/uiconf_id/23448477/partner_id/113?iframeembed=true&playerId=kaltura_player&entry_id=0_hgqr1d1w&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_fswn2lra" width="304" height="231" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="TD1a, Intro to Julia &amp; HW1 correction"></iframe>
 
 **A seminar on large deviations**
+
 <iframe id="kaltura_player" src="https://api.cast.switch.ch/p/113/sp/11300/embedIframeJs/uiconf_id/23448477/partner_id/113?iframeembed=true&playerId=kaltura_player&entry_id=0_2x685s5k&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_on2grid8" width="304" height="231" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="TD1b, Large deviations "></iframe>
