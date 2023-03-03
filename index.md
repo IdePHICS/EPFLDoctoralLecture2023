@@ -31,7 +31,7 @@ Recorded lectures will be made avalible on [mediaspace](https://mediaspace.epfl.
 
 ## Detailed lecture notes
 
-[Chapter 1-13](PHYS642.pdf) (still in construction)
+[Chapter 1-13](https://github.com/sphinxteam/EPFLDoctoralLecture2021/blob/main/Notes.pdf) (still in construction)
 
 ## Content 
 
