@@ -54,6 +54,6 @@ Julia Notebook:  [Curie-Weiss model](https://idephics.github.io/EPFLDoctoralLect
 <iframe id="kaltura_player" src="https://api.cast.switch.ch/p/113/sp/11300/embedIframeJs/uiconf_id/23448477/partner_id/113?iframeembed=true&playerId=kaltura_player&entry_id=0_2x685s5k&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_on2grid8" width="304" height="231" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="TD1b, Large deviations "></iframe>
 
 ### Week 2: Random Field Ising Model 
-
+We study the Random Field Ising Model.
 
 **Main lecture**
