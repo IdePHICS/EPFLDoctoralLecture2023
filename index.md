@@ -31,7 +31,7 @@ Recorded lectures will be made avalible on [mediaspace](https://mediaspace.epfl.
 
 ## Detailed lecture notes
 
-[Chapter 1-13](Resources/Week2/PHYS642.pdf) (still in construction)
+[Chapter 1-13](Resources/PHYS642.pdf) (still in construction)
 
 ## Content 
 
