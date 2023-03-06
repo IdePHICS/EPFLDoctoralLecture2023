@@ -39,7 +39,7 @@ Recorded lectures will be made avalible on [mediaspace](https://mediaspace.epfl.
 
 We covered the Curie-Weiss model in Chap 1, as well as Exercise 1.1 (Bounds on the binomial) and Exercise 1.5 (Glauber dynamics)
 
-Julia Notebook: [Curie-Weiss model](Resources/Week1/curie_weiss.html)
+Julia Notebook: [Curie-Weiss model](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week1/curie_weiss.html)
 
 **Main lecture**
 
