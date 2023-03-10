@@ -73,7 +73,7 @@ Exercices will be Exercises 2.1 (Gaussian Poincare) & Exercise 2.3: (Mean-field 
 ### Week 3: Random Field Ising Model with non trivial network topology 
 We study the Random Field Ising Model on trees and sparse graphs. 
 
-The lectures notes for this chapter are here  and the exercise is the population dynamics exercise 4.2 here , it is due before 16/2, 10am!
+The lectures notes for this chapter are [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf)  and the exercise is the population dynamics exercise 4.2 here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf)  , it is due before 16/2, 10am!
 
 **Main lecture**
 
