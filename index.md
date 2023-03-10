@@ -73,6 +73,8 @@ Exercices will be Exercises 2.1 (Gaussian Poincare) & Exercise 2.3: (Mean-field 
 ### Week 3: Random Field Ising Model with non trivial network topology 
 We study the Random Field Ising Model on trees and sparse graphs. 
 
+The lectures notes for this chapter are here  and the exercise is the population dynamics exercise 4.2 here , it is due before 16/2, 10am!
+
 **Main lecture**
 
 <iframe id="kaltura_player" src="https://api.cast.switch.ch/p/113/sp/11300/embedIframeJs/uiconf_id/23448477/partner_id/113?iframeembed=true&playerId=kaltura_player&entry_id=0_s6ve7as9&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_nqkutwwk" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="3a, RFIM on a tree & BP"></iframe>
