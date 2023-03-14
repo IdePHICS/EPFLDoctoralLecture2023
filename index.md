@@ -58,6 +58,8 @@ We study the Random Field Ising Model. We used chap 2 of the lectures notes as w
 
 Exercices will be Exercises 2.1 (Gaussian Poincare) & Exercise 2.3: (Mean-field algorithm) Assignment. 
 
+Julia Notebook: [RFIM and mean field](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week2/rfim.html)
+
 **Main lecture**
 <iframe id="kaltura_player" src="https://api.cast.switch.ch/p/113/sp/11300/embedIframeJs/uiconf_id/23448477/partner_id/113?iframeembed=true&playerId=kaltura_player&entry_id=0_apkmjdvt&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_dpjr3hj7" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="2b, RFIM - Cavity and Replica method "></iframe>
 
@@ -73,7 +75,7 @@ Exercices will be Exercises 2.1 (Gaussian Poincare) & Exercise 2.3: (Mean-field 
 ### Week 3: Random Field Ising Model with non trivial network topology 
 We study the Random Field Ising Model on trees and sparse graphs. 
 
-The lectures notes for this chapter are [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf)  and the exercise is the population dynamics exercise 4.2 [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf)  , it is due before 16/2, 10am!
+The lectures notes for this chapter are [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf)  and the exercise is the population dynamics exercise 4.2 [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf)  , it is due before 16/3, 10am!
 
 **Main lecture**
 
