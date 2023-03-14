@@ -75,7 +75,7 @@ Julia Notebook: [RFIM and mean field](https://idephics.github.io/EPFLDoctoralLec
 ### Week 3: Random Field Ising Model with non trivial network topology 
 We study the Random Field Ising Model on trees and sparse graphs. 
 
-The lectures notes for this chapter are [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf)  and the exercise is the population dynamics exercise 4.2 [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf)  , it is due before 16/3, 10am!
+The lectures notes for this chapter are [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf)  and the exercise is the population dynamics exercise 4.2 [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf) , it is due before 16/3, 10am! I also strongly suggest exercice 4.1.
 
 **Main lecture**
 
