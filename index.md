@@ -3,7 +3,7 @@
 
 ## Staff
 
-Main lecturer: Pr. Florent Krzakala, head of [IdePHICS lab](https://www.epfl.ch/labs/idephics/) (with help from the amazing Pr. Lenka Zdeborová, head of [SPOC lab](https://www.epfl.ch/labs/spoc/))
+Main lecturer: Pr. Florent Krzakala, head of [IdePHICS lab](https://www.epfl.ch/labs/idephics/) (with help from the amazing Pr. Lenka Zdeborová, head of [SPOC lab](https://www.epfl.ch/labs/spoc/)).
 
 Teaching assistants: [Yatin Dandi](https://yatindandi.github.io/), [Guillaume Dalle](https://gdalle.github.io/), [Luca Pesce](https://people.epfl.ch/luca.pesce?lang=en).
 
@@ -15,7 +15,7 @@ More specifically, we will review the statistical physics approach to problems r
 
 We will expose theoretical methods of analysis (replica, cavity, ...) algorithms (message passing, spectral methods, ...), neural networks (theory of SGD, ...), discuss concrete applications, highlight rigorous justifications as well as present the connection to the physics of glassy and disordered systems.
 
-The aim is to make this growing field accessible to students from computer science, math, and engineering, not only physics (but of course, physicists are more than welcome). The course is set up so that we shall give open problems during and at the end of the semester. 
+The aim is to make this growing field accessible to students from computer science, math, and engineering, not only physics (but of course, physicists are more than welcome). The course is set up so that we shall give open problems during and at the end of the semester.
 
 ## References
 
@@ -25,21 +25,23 @@ The aim is to make this growing field accessible to students from computer scien
 
 ## Logistics
 
-Lectures will take place on Fridays (10:00-12:00 in CM 011) and exercise sessions will take place on Thursdays (10:00-12:00 in CM 011)
+Lectures will take place on Fridays (10:00-12:00 in CM 011) and exercise sessions will take place on Thursdays (10:00-12:00 in CM 011).
 
-Recorded lectures will be made avalible on [mediaspace](https://mediaspace.epfl.ch/channel/PHYS-642%2BStatistical%2Bphysics%2Bfor%2Boptimization%2B%2526%2Blearning%2B23/31507)
+Recorded lectures will be made avalible on [mediaspace](https://mediaspace.epfl.ch/channel/PHYS-642%2BStatistical%2Bphysics%2Bfor%2Boptimization%2B%2526%2Blearning%2B23/31507).
 
 ## Detailed lecture notes
 
-[Chapter 1-13](Resources/PHYS642.pdf) (still in construction)
+[Chapters 1-13](Resources/PHYS642.pdf) (still in construction)
 
-## Content 
+## Classes
 
 ### Week 1: The Curie-Weiss model
 
-We covered the Curie-Weiss model in Chap 1, as well as Exercise 1.1 (Bounds on the binomial) and Exercise 1.5 (Glauber dynamics)
+Lecture content: Curie-Weiss model in Chap 1
 
-Julia Notebook: [Curie-Weiss model](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week1/curie_weiss.html)
+Exercises: 1.1 (Bounds on the binomial) and 1.5 (Glauber dynamics). Due on March 2nd at 10 AM
+
+Julia notebook: [Curie-Weiss model](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week1/curie_weiss.html)
 
 **Main lecture**
 
@@ -54,13 +56,15 @@ Julia Notebook: [Curie-Weiss model](https://idephics.github.io/EPFLDoctoralLectu
 <iframe id="kaltura_player" src="https://api.cast.switch.ch/p/113/sp/11300/embedIframeJs/uiconf_id/23448477/partner_id/113?iframeembed=true&playerId=kaltura_player&entry_id=0_2x685s5k&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=right&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_on2grid8" width="304" height="231" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="TD1b, Large deviations "></iframe>
 
 ### Week 2: Random Field Ising Model 
-We study the Random Field Ising Model. We used chap 2 of the lectures notes as well as [those slides for replica method](Resources/Week2/Replica.pdf)
 
-Exercices will be Exercises 2.1 (Gaussian Poincare) & Exercise 2.3: (Mean-field algorithm) Assignment. 
+Lecture content: Random Field Ising Model in Chap 2, see also the [slides about the replica method](Resources/Week2/Replica.pdf)
 
-Julia Notebook: [RFIM and mean field](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week2/rfim.html)
+Exercises: 2.1 (Gaussian Poincare inequality) & 2.3 (Mean-field algorithm). Due on March 9th at 10 AM
+
+Julia notebook: [RFIM & mean field](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week2/rfim.html)
 
 **Main lecture**
+
 <iframe id="kaltura_player" src="https://api.cast.switch.ch/p/113/sp/11300/embedIframeJs/uiconf_id/23448477/partner_id/113?iframeembed=true&playerId=kaltura_player&entry_id=0_apkmjdvt&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_dpjr3hj7" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="2b, RFIM - Cavity and Replica method "></iframe>
 
 <iframe id="kaltura_player" src="https://api.cast.switch.ch/p/113/sp/11300/embedIframeJs/uiconf_id/23448477/partner_id/113?iframeembed=true&playerId=kaltura_player&entry_id=0_4dkqfawh&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=right&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_5c2rumwg" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="2a, RFIM - Variational method "></iframe>
@@ -73,16 +77,19 @@ Julia Notebook: [RFIM and mean field](https://idephics.github.io/EPFLDoctoralLec
 
 <iframe id="kaltura_player" src="https://api.cast.switch.ch/p/113/sp/11300/embedIframeJs/uiconf_id/23448477/partner_id/113?iframeembed=true&playerId=kaltura_player&entry_id=0_ehprtra6&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_2z9zkbub" width="304" height="231" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="TD2b, Stieltjes transform with the replica method"></iframe>
 
-### Week 3: Random Field Ising Model with non trivial network topology 
-We study the Random Field Ising Model on trees and sparse graphs. 
+### Week 3: Random Field Ising Model with non-trivial network topology 
 
-The lectures notes for this chapter are [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf)  and the exercise is the population dynamics exercise 4.2 [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf) , it is due before 16/3, 10am! I also strongly suggest exercice 4.1.
+Lecture content: Random Field Ising Model on trees and sparse graphs. 
+
+The lectures notes for this chapter are [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf)
+
+Exercises (also [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf)): 4.2 (population dynamics), but 4.1 (Erdös-Renyi graphs) is also strongly recommended. Due on March 16th at 10 AM.
+
+Julia notebook: [RFIM on random graphs & Potts model](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week3/rfim_rg.html)
+
 
 **Main lecture**
 
 <iframe id="kaltura_player" src="https://api.cast.switch.ch/p/113/sp/11300/embedIframeJs/uiconf_id/23448477/partner_id/113?iframeembed=true&playerId=kaltura_player&entry_id=0_s6ve7as9&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_nqkutwwk" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="3a, RFIM on a tree & BP"></iframe>
 
 <iframe id="kaltura_player" src="https://api.cast.switch.ch/p/113/sp/11300/embedIframeJs/uiconf_id/23448477/partner_id/113?iframeembed=true&playerId=kaltura_player&entry_id=0_bkoeu9qs&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_pnl4uie4" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="3b, RFIM on sparse graphs & Population dynamics"></iframe>
-
-
-
