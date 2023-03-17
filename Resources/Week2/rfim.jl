@@ -269,10 +269,10 @@ let
 	nb_samples = 10
 	N = 10^4
 	tmax = 100
-	
+
 	m_mf, e_mf = similar(Δ_values), similar(Δ_values)
 	m_rs, e_rs = similar(Δ_values), similar(Δ_values)
-	
+
 	@progress for (k, Δ) in enumerate(Δ_values)
 		S = Vector{Int}(undef, N)
 		h = Vector{Float64}(undef, N)
@@ -291,7 +291,7 @@ let
 		m_rs[k] = maximum(m_candidates)
 		e_rs[k] = minimum(energy_zeroT(m; Δ) for m in m_candidates)
 	end
-	
+
 	p1 = plot(ylabel="Magnetization")
 	plot!(p1, Δ_values, m_rs; lw=2, label="replica")
 	scatter!(p1, Δ_values, m_mf; label="mean field")
@@ -299,7 +299,7 @@ let
 	p2 = plot(xlabel="Disorder " * L"\Delta", ylabel="Energy")
 	plot!(p2, Δ_values, e_rs;lw=2, label="replica")
 	scatter!(p2, Δ_values, e_mf; label="mean field")
-	
+
 	plot(p1, p2, layout=(2, 1); sharex=true)
 end
 
@@ -313,20 +313,20 @@ let
 	Δ = 1
 	N = 10^5
 	tmax = 30
-	
+
 	m_mf_history = Vector{Float64}(undef, tmax + 1)
 	m_se_history = Vector{Float64}(undef, tmax + 1)
-	
+
 	S = ones(Int, N)
 	h = sqrt(Δ) .* randn(N)
-	
+
 	# Same initialization
 	m_mf = mean(S)
 	m_se = m_mf
-	
+
 	m_mf_history[1] = m_mf
 	m_se_history[1] = m_se
-	
+
 	for t in 1:tmax
 		# Different dynamics
 		mean_field_step!(S, h)
