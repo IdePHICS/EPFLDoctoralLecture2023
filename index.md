@@ -61,7 +61,7 @@ Lecture content: Random Field Ising Model in Chap 2, see also the [slides about 
 
 Exercises: 2.1 (Gaussian Poincare inequality) & 2.3 (Mean-field algorithm). Due on March 9th at 10 AM
 
-Julia notebook: [RFIM & mean field](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week2/rfim.html)
+Julia notebook: [RFIM & mean field](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week2/rfim_mean_field.html)
 
 **Main lecture**
 

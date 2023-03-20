@@ -14,7 +14,7 @@ macro bind(def, element)
     end
 end
 
-# ╔═╡ 76fd9b09-ee90-4873-be0e-5691bd7102b7
+# ╔═╡ 5aa7744a-c71f-11ed-02de-a3b1675fd794
 begin
 	using Integrals
 	using LaTeXStrings
@@ -29,20 +29,15 @@ begin
 	using Statistics
 end
 
-# ╔═╡ 713bfe16-b918-11ed-2828-790dbc6752f7
-md"""
-# Random Field Ising Model
-"""
-
-# ╔═╡ b403cd00-b845-4641-a499-6ea98e9ba871
+# ╔═╡ 63a7e778-3a88-4bc2-859e-6ab31fd9eeda
 TableOfContents()
 
-# ╔═╡ a7a782ec-0ba9-4a1b-bdfe-3a8c3895e085
+# ╔═╡ af3e25e2-2b72-44f4-b330-056aa0af2eef
 md"""
 ## Model description
 """
 
-# ╔═╡ 59038357-744f-4acf-8986-c93d17178f6d
+# ╔═╡ e7673f8c-e765-4ec4-a811-41844e21e7ac
 md"""
 We have $N$ spins $S_i \in \{\pm 1\}$, each subject to a random field $h_i \sim \mathcal{N}(0, \Delta)$. The Hamiltonian is
 ```math
@@ -50,20 +45,20 @@ We have $N$ spins $S_i \in \{\pm 1\}$, each subject to a random field $h_i \sim 
 ```
 """
 
-# ╔═╡ a0b0c534-f0da-4d43-82e6-c44df2831f7b
+# ╔═╡ 258a3b98-e95c-420a-96f6-7bfdd1eaf4f2
 energy(S, h) = - (length(S) / 2) * mean(S)^2 - dot(h, S)
 
-# ╔═╡ 56a41328-c546-446c-9060-c6dd3160b7e6
+# ╔═╡ b6cd6ca0-5b6a-40e8-8955-2a953779222b
 md"""
 ## Replica method
 """
 
-# ╔═╡ 1ac394d7-ac85-422c-b75a-ce5efe3d1d24
+# ╔═╡ ede7e614-f42f-407c-b2f6-38b890601af5
 md"""
 ### Free entropy
 """
 
-# ╔═╡ de0ab1a9-d9f1-4422-80ed-fa9cb10944d4
+# ╔═╡ 058fbd7d-5e4b-4811-a618-6569c9fa91d9
 md"""
 The replica method yields the following free entropy density potential:
 ```math
@@ -75,24 +70,24 @@ m^* = \mathbb{E}_h \left[ \tanh(\beta(h + m^*)) \right]
 ```
 """
 
-# ╔═╡ 6d0b72e3-bb65-42ce-99c8-b66d3e21f776
+# ╔═╡ 4d3faa4e-66ee-4c56-956f-b5093dc51009
 function integrand_potential(h, (β, Δ, m))
 	return (1 / sqrt(2*π*Δ)) * exp(-h^2 / (2Δ)) * log(2 * cosh(β * (h + m)))
 end
 
-# ╔═╡ becb0939-9e48-45cc-a928-52766326923f
+# ╔═╡ 290ae678-b342-467e-b08b-9d51099657f6
 function integrand_fixed_point(h, (β, Δ, m))
 	return (1 / sqrt(2*π*Δ)) * exp(-h^2 / (2Δ)) * tanh(β * (h + m))
 end
 
-# ╔═╡ 012cb5c9-4e8a-4c2c-88e9-591479b96f14
+# ╔═╡ ba2647a8-47bb-494d-86f0-dcecdd793235
 function ϕ_RS(m; β, Δ)
 	prob = IntegralProblem(integrand_potential, -3Δ - 2, +3Δ + 2, (β, Δ, m))
 	sol = solve(prob, QuadGKJL())
 	return -(β * m^2 / 2) + sol.u
 end
 
-# ╔═╡ ca3c4c2e-97ff-4aa4-bed3-8e5cc7143c70
+# ╔═╡ 1947c706-1f78-4449-a0c7-7be4c1e80932
 function fixed_point(m; β, Δ, tol)
 	error = Inf
 	while error > tol
@@ -105,7 +100,7 @@ function fixed_point(m; β, Δ, tol)
 	return m
 end
 
-# ╔═╡ c54e118d-6080-401e-a881-cf1c52008cc7
+# ╔═╡ 43cd8a3d-6a4c-4da3-91c2-f4086a01846e
 function fixed_points(; β, Δ, tol)
 	m1 = fixed_point(-1; β, Δ, tol)
 	m2 = fixed_point(0; β, Δ, tol)
@@ -113,20 +108,20 @@ function fixed_points(; β, Δ, tol)
 	return (m1, m2, m3)
 end
 
-# ╔═╡ 2d14db05-cae7-478a-aafc-129540236f8f
+# ╔═╡ a2dcaf5f-078f-4118-a4b1-80c153001ca3
 slider_β = md"""
 ``\log_{10}\beta =`` $(@bind logβ Slider(-0.5:0.01:0.5; default=0, show_value=true))
 """;
 
-# ╔═╡ 51b20c31-5232-408e-9086-63d93c4706f2
+# ╔═╡ 2527f0d0-167c-4cc0-b50a-3ece76a44e27
 slider_Δ = md"""
 ``\log_{10}\Delta =`` $(@bind logΔ Slider(-2:0.01:1; default=0, show_value=true))
 """;
 
-# ╔═╡ 184e23d0-f672-4685-b11c-8309f815709e
+# ╔═╡ a4347603-13af-4756-b34e-fe4458480662
 TwoColumn(slider_β, slider_Δ)
 
-# ╔═╡ df57fe90-a3a3-45bb-848c-8ec4aeb22677
+# ╔═╡ aec33d7a-8c06-4dcb-a43d-8f8b716997e9
 let
 	β, Δ = 10^logβ, 10^logΔ
 	m_grid = -1:0.01:1
@@ -141,12 +136,12 @@ let
 	)
 end
 
-# ╔═╡ 1c753907-8d49-41ff-9341-8e737c0bec1e
+# ╔═╡ a7083ba1-06d1-4c4d-8c8d-bde1a1dd05ab
 md"""
 ### Energy
 """
 
-# ╔═╡ e75ab74c-29d2-4441-8493-bfcafdf7058e
+# ╔═╡ c8fb4807-bc32-4d39-84b8-c28b8122a33c
 md"""
 Remember that the free entropy density is defined as
 ```math
@@ -158,7 +153,7 @@ and therefore
 ```
 """
 
-# ╔═╡ 080daae3-d058-4703-a080-a764a2a3f4c4
+# ╔═╡ 8efb152d-9892-4bf6-9f9e-e340e786b2da
 md"""
 So the energy density in the thermodynamic limit satisfies
 ```math
@@ -177,17 +172,17 @@ e_{RS}(\beta, \Delta) = \frac{(m^*)^2}{2} - \mathbb{E}_h \left[(h+m^*) \tanh(\be
 ```
 """
 
-# ╔═╡ cdc10927-d3f3-4455-bdaf-1c458b314b68
+# ╔═╡ acbea953-404a-44bc-b775-b971276ddc05
 md"""
 ## Mean field algorithm
 """
 
-# ╔═╡ 1d10d9bd-9da8-4f53-8a29-62d58b60f791
+# ╔═╡ d123f5f2-e13b-4cdb-9953-48cc84890f9d
 md"""
 ### Update equation
 """
 
-# ╔═╡ adee9e30-270c-4dfc-b543-479908f7ece4
+# ╔═╡ 9cfba810-af51-472c-9dab-2eca5ba6482c
 md"""
 This time we're not trying to sample from
 ```math
@@ -196,7 +191,7 @@ This time we're not trying to sample from
 at finite $\beta$. Instead we take $\beta \to \infty$ and look for the global minima of the energy.
 """
 
-# ╔═╡ 2ae98393-db76-4e90-ac87-2d0233d1cc69
+# ╔═╡ 26a194da-479d-46f2-93be-b1e5d9edc1fb
 md"""
 The mean field algorithm greedily aligns each spin with its associated local field:
 ```math
@@ -204,7 +199,7 @@ S_i^{t+1} = \mathrm{sign} \left(h_i + \frac{1}{N} \sum_i S_i^t \right)
 ```
 """
 
-# ╔═╡ 6d589fe4-9ac5-400b-8792-f8b27b878b9d
+# ╔═╡ 2590b8c6-9ecf-4d3c-b953-be03635350e2
 function mean_field_step!(S, h)
 	m = mean(S)
 	for i in eachindex(S, h)
@@ -216,7 +211,7 @@ function mean_field_step!(S, h)
 	end
 end
 
-# ╔═╡ 28641b04-54c1-4293-a17e-9509f2c46d7c
+# ╔═╡ 6ebc96d7-7bb8-40b1-9d7e-8eca21a29046
 md"""
 The limit when $\beta \to \infty$ of the replica results is
 ```math
@@ -239,7 +234,7 @@ e_{RS}(\Delta) & = \frac{(m^*)^2}{2} - \mathbb{E}_h \left[(h+m^*) \mathrm{sign}(
 for the energy density.
 """
 
-# ╔═╡ dfdf2ea1-d788-4af2-8500-6a46569b9330
+# ╔═╡ b7db583e-43e5-4b3d-b76b-19f5bae30db8
 function fixed_point_zeroT(m; Δ, tol)
 	error = Inf
 	while error > tol
@@ -250,7 +245,7 @@ function fixed_point_zeroT(m; Δ, tol)
 	return m
 end
 
-# ╔═╡ 8e3ace21-6b39-49ae-aaed-01b1043fa9e4
+# ╔═╡ 3902ab2d-b5d3-4d37-b8c0-31ad76a38dba
 function fixed_points_zeroT(; Δ, tol)
 	m1 = fixed_point_zeroT(-1; Δ, tol)
 	m2 = fixed_point_zeroT(0; Δ, tol)
@@ -258,21 +253,21 @@ function fixed_points_zeroT(; Δ, tol)
 	return (m1, m2, m3)
 end
 
-# ╔═╡ 907f87a4-82af-4023-8dd2-94af8a5caf5d
+# ╔═╡ 445467c6-5745-4ab0-8017-322e10fcfc65
 function energy_zeroT(m; Δ)
 	return -0.5 * m^2 - sqrt(2Δ / π) * exp(-m^2 / (2Δ))
 end
 
-# ╔═╡ fee040e6-ccf8-4c98-8756-fad75f6975e5
+# ╔═╡ 511f17bd-2206-4fab-b92c-f57282d5cf19
 let
 	Δ_values = 0:0.05:1
 	nb_samples = 10
 	N = 10^4
 	tmax = 100
-
+	
 	m_mf, e_mf = similar(Δ_values), similar(Δ_values)
 	m_rs, e_rs = similar(Δ_values), similar(Δ_values)
-
+	
 	@progress for (k, Δ) in enumerate(Δ_values)
 		S = Vector{Int}(undef, N)
 		h = Vector{Float64}(undef, N)
@@ -291,7 +286,7 @@ let
 		m_rs[k] = maximum(m_candidates)
 		e_rs[k] = minimum(energy_zeroT(m; Δ) for m in m_candidates)
 	end
-
+	
 	p1 = plot(ylabel="Magnetization")
 	plot!(p1, Δ_values, m_rs; lw=2, label="replica")
 	scatter!(p1, Δ_values, m_mf; label="mean field")
@@ -299,34 +294,34 @@ let
 	p2 = plot(xlabel="Disorder " * L"\Delta", ylabel="Energy")
 	plot!(p2, Δ_values, e_rs;lw=2, label="replica")
 	scatter!(p2, Δ_values, e_mf; label="mean field")
-
+	
 	plot(p1, p2, layout=(2, 1); sharex=true)
 end
 
-# ╔═╡ 30358eed-7b25-4ac4-8788-b9bb740d1f9b
+# ╔═╡ 9d762810-e655-4350-8357-faddaeea3263
 md"""
 ### State evolution
 """
 
-# ╔═╡ 74bf38b9-6c60-45b9-91bf-0d093b69b39a
+# ╔═╡ 31c2c341-caf3-43e9-93f5-1476d6165c47
 let
 	Δ = 1
 	N = 10^5
 	tmax = 30
-
+	
 	m_mf_history = Vector{Float64}(undef, tmax + 1)
 	m_se_history = Vector{Float64}(undef, tmax + 1)
-
+	
 	S = ones(Int, N)
 	h = sqrt(Δ) .* randn(N)
-
+	
 	# Same initialization
 	m_mf = mean(S)
 	m_se = m_mf
-
+	
 	m_mf_history[1] = m_mf
 	m_se_history[1] = m_se
-
+	
 	for t in 1:tmax
 		# Different dynamics
 		mean_field_step!(S, h)
@@ -360,8 +355,8 @@ Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 [compat]
 Integrals = "~3.7.0"
 LaTeXStrings = "~1.3.0"
-Plots = "~1.38.6"
-PlutoTeachingTools = "~0.2.6"
+Plots = "~1.38.8"
+PlutoTeachingTools = "~0.2.8"
 PlutoUI = "~0.7.50"
 ProfileCanvas = "~0.1.6"
 ProgressLogging = "~0.1.4"
@@ -374,7 +369,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.8.5"
 manifest_format = "2.0"
-project_hash = "3c583105d52093b7fcf3f0af96694b51ac40264c"
+project_hash = "1d9729dc7c2f55618708357b7e095a97ec67cefb"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -394,9 +389,9 @@ version = "1.1.1"
 
 [[deps.ArrayInterface]]
 deps = ["Adapt", "LinearAlgebra", "Requires", "SnoopPrecompile", "SparseArrays", "SuiteSparse"]
-git-tree-sha1 = "ec9c36854b569323551a6faf2f31fda15e3459a7"
+git-tree-sha1 = "a89acc90c551067cd84119ff018619a1a76c6277"
 uuid = "4fba245c-0d91-5ea0-9b3e-6abc04ee57a9"
-version = "7.2.0"
+version = "7.2.1"
 
 [[deps.Artifacts]]
 uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
@@ -441,9 +436,9 @@ version = "0.1.6"
 
 [[deps.CodeTracking]]
 deps = ["InteractiveUtils", "UUIDs"]
-git-tree-sha1 = "4f619d394ac521dc59cb80a2cd8f78578e483a9d"
+git-tree-sha1 = "d57c99cc7e637165c81b30eb268eabe156a45c49"
 uuid = "da1fd8a2-8d9e-5ec2-8556-3022fb5608a2"
-version = "1.2.1"
+version = "1.2.2"
 
 [[deps.CodecZlib]]
 deps = ["TranscodingStreams", "Zlib_jll"]
@@ -487,9 +482,9 @@ version = "0.2.3"
 
 [[deps.Compat]]
 deps = ["Dates", "LinearAlgebra", "UUIDs"]
-git-tree-sha1 = "61fdd77467a5c3ad071ef8277ac6bd6af7dd4c04"
+git-tree-sha1 = "7a60c856b9fa189eb34f5f8a6f6b5529b7942957"
 uuid = "34da2185-b29b-5c13-b0c7-acf172513d20"
-version = "4.6.0"
+version = "4.6.1"
 
 [[deps.CompilerSupportLibraries_jll]]
 deps = ["Artifacts", "Libdl"]
@@ -543,9 +538,9 @@ uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 
 [[deps.Distributions]]
 deps = ["ChainRulesCore", "DensityInterface", "FillArrays", "LinearAlgebra", "PDMats", "Printf", "QuadGK", "Random", "SparseArrays", "SpecialFunctions", "Statistics", "StatsBase", "StatsFuns", "Test"]
-git-tree-sha1 = "fb372fc76a20edda014dfc2cdb33f23ef80feda6"
+git-tree-sha1 = "da9e1a9058f8d3eec3a8c9fe4faacfb89180066b"
 uuid = "31c24e10-a181-5473-b8eb-7969acd0382f"
-version = "0.25.85"
+version = "0.25.86"
 
 [[deps.DocStringExtensions]]
 deps = ["LibGit2"]
@@ -576,9 +571,9 @@ uuid = "2e619515-83b5-522b-bb60-26c02a35a201"
 version = "2.4.8+0"
 
 [[deps.ExprTools]]
-git-tree-sha1 = "56559bbef6ca5ea0c0818fa5c90320398a6fbf8d"
+git-tree-sha1 = "c1d06d129da9f55715c6c212866f5b1bddc5fa00"
 uuid = "e2ba6199-217a-4e67-a87a-7c52f15ade04"
-version = "0.1.8"
+version = "0.1.9"
 
 [[deps.FFMPEG]]
 deps = ["FFMPEG_jll"]
@@ -597,9 +592,9 @@ uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
 
 [[deps.FillArrays]]
 deps = ["LinearAlgebra", "Random", "SparseArrays", "Statistics"]
-git-tree-sha1 = "d3ba08ab64bdfd27234d3f61956c966266757fe6"
+git-tree-sha1 = "3b245d1e50466ca0c9529e2033a3c92387c59c2f"
 uuid = "1a297f60-69ca-5386-bcde-b61e274b549b"
-version = "0.13.7"
+version = "0.13.9"
 
 [[deps.FixedPointNumbers]]
 deps = ["Statistics"]
@@ -660,15 +655,15 @@ version = "0.1.4"
 
 [[deps.GR]]
 deps = ["Artifacts", "Base64", "DelimitedFiles", "Downloads", "GR_jll", "HTTP", "JSON", "Libdl", "LinearAlgebra", "Pkg", "Preferences", "Printf", "Random", "Serialization", "Sockets", "TOML", "Tar", "Test", "UUIDs", "p7zip_jll"]
-git-tree-sha1 = "660b2ea2ec2b010bb02823c6d0ff6afd9bdc5c16"
+git-tree-sha1 = "4423d87dc2d3201f3f1768a29e807ddc8cc867ef"
 uuid = "28b8d3ca-fb5f-59d9-8090-bfdbd6d07a71"
-version = "0.71.7"
+version = "0.71.8"
 
 [[deps.GR_jll]]
 deps = ["Artifacts", "Bzip2_jll", "Cairo_jll", "FFMPEG_jll", "Fontconfig_jll", "GLFW_jll", "JLLWrappers", "JpegTurbo_jll", "Libdl", "Libtiff_jll", "Pixman_jll", "Qt5Base_jll", "Zlib_jll", "libpng_jll"]
-git-tree-sha1 = "d5e1fd17ac7f3aa4c5287a61ee28d4f8b8e98873"
+git-tree-sha1 = "3657eb348d44575cc5560c80d7e55b812ff6ffe1"
 uuid = "d2c73de3-f751-5644-a686-071e5b155ba9"
-version = "0.71.7+0"
+version = "0.71.8+0"
 
 [[deps.Gettext_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "Libdl", "Libiconv_jll", "Pkg", "XML2_jll"]
@@ -1044,9 +1039,9 @@ version = "0.11.17"
 
 [[deps.Parsers]]
 deps = ["Dates", "SnoopPrecompile"]
-git-tree-sha1 = "6f4fbcd1ad45905a5dee3f4256fabb49aa2110c6"
+git-tree-sha1 = "478ac6c952fddd4399e71d4779797c538d0ff2bf"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "2.5.7"
+version = "2.5.8"
 
 [[deps.Pipe]]
 git-tree-sha1 = "6842804e7867b115ca9de748a0cf6b364523c16d"
@@ -1078,9 +1073,9 @@ version = "1.3.4"
 
 [[deps.Plots]]
 deps = ["Base64", "Contour", "Dates", "Downloads", "FFMPEG", "FixedPointNumbers", "GR", "JLFzf", "JSON", "LaTeXStrings", "Latexify", "LinearAlgebra", "Measures", "NaNMath", "Pkg", "PlotThemes", "PlotUtils", "Preferences", "Printf", "REPL", "Random", "RecipesBase", "RecipesPipeline", "Reexport", "RelocatableFolders", "Requires", "Scratch", "Showoff", "SnoopPrecompile", "SparseArrays", "Statistics", "StatsBase", "UUIDs", "UnicodeFun", "Unzip"]
-git-tree-sha1 = "da1d3fb7183e38603fcdd2061c47979d91202c97"
+git-tree-sha1 = "f49a45a239e13333b8b936120fe6d793fe58a972"
 uuid = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
-version = "1.38.6"
+version = "1.38.8"
 
 [[deps.PlutoHooks]]
 deps = ["InteractiveUtils", "Markdown", "UUIDs"]
@@ -1096,9 +1091,9 @@ version = "0.1.6"
 
 [[deps.PlutoTeachingTools]]
 deps = ["Downloads", "HypertextLiteral", "LaTeXStrings", "Latexify", "Markdown", "PlutoLinks", "PlutoUI", "Random"]
-git-tree-sha1 = "eb11c2e0586fdf48d5d262ba6e29e438ccc512d9"
+git-tree-sha1 = "b970826468465da71f839cdacc403e99842c18ea"
 uuid = "661c6b06-c737-4d37-b85c-46df65de6f69"
-version = "0.2.6"
+version = "0.2.8"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
@@ -1140,9 +1135,9 @@ version = "5.15.3+2"
 
 [[deps.QuadGK]]
 deps = ["DataStructures", "LinearAlgebra"]
-git-tree-sha1 = "786efa36b7eff813723c4849c90456609cf06661"
+git-tree-sha1 = "6ec7ac8412e83d57e313393220879ede1740f9ee"
 uuid = "1fd47b50-473d-5c70-9696-f719f8f3bcdc"
-version = "2.8.1"
+version = "2.8.2"
 
 [[deps.REPL]]
 deps = ["InteractiveUtils", "Markdown", "Sockets", "Unicode"]
@@ -1217,21 +1212,21 @@ version = "0.7.0"
 
 [[deps.SciMLBase]]
 deps = ["ArrayInterface", "CommonSolve", "ConstructionBase", "Distributed", "DocStringExtensions", "EnumX", "FunctionWrappersWrappers", "IteratorInterfaceExtensions", "LinearAlgebra", "Logging", "Markdown", "Preferences", "RecipesBase", "RecursiveArrayTools", "Reexport", "RuntimeGeneratedFunctions", "SciMLOperators", "SnoopPrecompile", "StaticArraysCore", "Statistics", "SymbolicIndexingInterface", "Tables", "TruncatedStacktraces"]
-git-tree-sha1 = "fe55d9f9d73fec26f64881ba8d120607c22a54b0"
+git-tree-sha1 = "d78c2134ea1484559aa53cae133c0504ba31abec"
 uuid = "0bca4576-84f4-4d90-8ffe-ffa030f20462"
-version = "1.88.0"
+version = "1.91.1"
 
 [[deps.SciMLOperators]]
 deps = ["ArrayInterface", "DocStringExtensions", "Lazy", "LinearAlgebra", "Setfield", "SparseArrays", "StaticArraysCore", "Tricks"]
-git-tree-sha1 = "8419114acbba861ac49e1ab2750bae5c5eda35c4"
+git-tree-sha1 = "e61e48ef909375203092a6e83508c8416df55a83"
 uuid = "c0aeaf25-5076-4817-a8d5-81caf7dfa961"
-version = "0.1.22"
+version = "0.2.0"
 
 [[deps.Scratch]]
 deps = ["Dates"]
-git-tree-sha1 = "f94f779c94e58bf9ea243e77a37e16d9de9126bd"
+git-tree-sha1 = "30449ee12237627992a99d5e30ae63e4d78cd24a"
 uuid = "6c6a2e73-6563-6170-7368-637461726353"
-version = "1.1.1"
+version = "1.2.0"
 
 [[deps.Serialization]]
 uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
@@ -1280,9 +1275,9 @@ version = "2.2.0"
 
 [[deps.StaticArrays]]
 deps = ["LinearAlgebra", "Random", "StaticArraysCore", "Statistics"]
-git-tree-sha1 = "2d7d9e1ddadc8407ffd460e24218e37ef52dd9a3"
+git-tree-sha1 = "6aa098ef1012364f2ede6b17bf358c7f1fbe90d4"
 uuid = "90137ffa-7385-5640-81b9-e52037218182"
-version = "1.5.16"
+version = "1.5.17"
 
 [[deps.StaticArraysCore]]
 git-tree-sha1 = "6b7ba252635a5eff6a0b0664a41ee140a1c9e72a"
@@ -1334,9 +1329,9 @@ version = "1.0.1"
 
 [[deps.Tables]]
 deps = ["DataAPI", "DataValueInterfaces", "IteratorInterfaceExtensions", "LinearAlgebra", "OrderedCollections", "TableTraits", "Test"]
-git-tree-sha1 = "c79322d36826aa2f4fd8ecfa96ddb47b174ac78d"
+git-tree-sha1 = "1544b926975372da01227b382066ab70e574a3ec"
 uuid = "bd369af6-aec1-5ad0-b16a-f7cc5008161c"
-version = "1.10.0"
+version = "1.10.1"
 
 [[deps.Tar]]
 deps = ["ArgTools", "SHA"]
@@ -1365,10 +1360,10 @@ uuid = "410a4b4d-49e4-4fbc-ab6d-cb71b17b3775"
 version = "0.1.6"
 
 [[deps.TruncatedStacktraces]]
-deps = ["InteractiveUtils"]
-git-tree-sha1 = "7cdbe45f0018b7f681a6b63ad1250ee6f2297a87"
+deps = ["InteractiveUtils", "MacroTools", "Preferences"]
+git-tree-sha1 = "6901000d75a14520bdd067fe90b9392384eb04a7"
 uuid = "781d530d-4396-4725-bb49-402e4bee1e77"
-version = "1.0.0"
+version = "1.2.0"
 
 [[deps.URIs]]
 git-tree-sha1 = "074f993b0ca030848b897beff716d93aca60f06a"
@@ -1631,38 +1626,37 @@ version = "1.4.1+0"
 """
 
 # ╔═╡ Cell order:
-# ╟─713bfe16-b918-11ed-2828-790dbc6752f7
-# ╠═76fd9b09-ee90-4873-be0e-5691bd7102b7
-# ╠═b403cd00-b845-4641-a499-6ea98e9ba871
-# ╟─a7a782ec-0ba9-4a1b-bdfe-3a8c3895e085
-# ╟─59038357-744f-4acf-8986-c93d17178f6d
-# ╠═a0b0c534-f0da-4d43-82e6-c44df2831f7b
-# ╟─56a41328-c546-446c-9060-c6dd3160b7e6
-# ╟─1ac394d7-ac85-422c-b75a-ce5efe3d1d24
-# ╟─de0ab1a9-d9f1-4422-80ed-fa9cb10944d4
-# ╠═6d0b72e3-bb65-42ce-99c8-b66d3e21f776
-# ╠═becb0939-9e48-45cc-a928-52766326923f
-# ╠═012cb5c9-4e8a-4c2c-88e9-591479b96f14
-# ╠═ca3c4c2e-97ff-4aa4-bed3-8e5cc7143c70
-# ╠═c54e118d-6080-401e-a881-cf1c52008cc7
-# ╠═2d14db05-cae7-478a-aafc-129540236f8f
-# ╠═51b20c31-5232-408e-9086-63d93c4706f2
-# ╠═184e23d0-f672-4685-b11c-8309f815709e
-# ╠═df57fe90-a3a3-45bb-848c-8ec4aeb22677
-# ╟─1c753907-8d49-41ff-9341-8e737c0bec1e
-# ╟─e75ab74c-29d2-4441-8493-bfcafdf7058e
-# ╟─080daae3-d058-4703-a080-a764a2a3f4c4
-# ╟─cdc10927-d3f3-4455-bdaf-1c458b314b68
-# ╟─1d10d9bd-9da8-4f53-8a29-62d58b60f791
-# ╟─adee9e30-270c-4dfc-b543-479908f7ece4
-# ╟─2ae98393-db76-4e90-ac87-2d0233d1cc69
-# ╠═6d589fe4-9ac5-400b-8792-f8b27b878b9d
-# ╟─28641b04-54c1-4293-a17e-9509f2c46d7c
-# ╠═dfdf2ea1-d788-4af2-8500-6a46569b9330
-# ╠═8e3ace21-6b39-49ae-aaed-01b1043fa9e4
-# ╠═907f87a4-82af-4023-8dd2-94af8a5caf5d
-# ╠═fee040e6-ccf8-4c98-8756-fad75f6975e5
-# ╟─30358eed-7b25-4ac4-8788-b9bb740d1f9b
-# ╠═74bf38b9-6c60-45b9-91bf-0d093b69b39a
+# ╠═5aa7744a-c71f-11ed-02de-a3b1675fd794
+# ╠═63a7e778-3a88-4bc2-859e-6ab31fd9eeda
+# ╟─af3e25e2-2b72-44f4-b330-056aa0af2eef
+# ╟─e7673f8c-e765-4ec4-a811-41844e21e7ac
+# ╠═258a3b98-e95c-420a-96f6-7bfdd1eaf4f2
+# ╟─b6cd6ca0-5b6a-40e8-8955-2a953779222b
+# ╟─ede7e614-f42f-407c-b2f6-38b890601af5
+# ╟─058fbd7d-5e4b-4811-a618-6569c9fa91d9
+# ╠═4d3faa4e-66ee-4c56-956f-b5093dc51009
+# ╠═290ae678-b342-467e-b08b-9d51099657f6
+# ╠═ba2647a8-47bb-494d-86f0-dcecdd793235
+# ╠═1947c706-1f78-4449-a0c7-7be4c1e80932
+# ╠═43cd8a3d-6a4c-4da3-91c2-f4086a01846e
+# ╠═a2dcaf5f-078f-4118-a4b1-80c153001ca3
+# ╠═2527f0d0-167c-4cc0-b50a-3ece76a44e27
+# ╠═a4347603-13af-4756-b34e-fe4458480662
+# ╠═aec33d7a-8c06-4dcb-a43d-8f8b716997e9
+# ╟─a7083ba1-06d1-4c4d-8c8d-bde1a1dd05ab
+# ╟─c8fb4807-bc32-4d39-84b8-c28b8122a33c
+# ╟─8efb152d-9892-4bf6-9f9e-e340e786b2da
+# ╟─acbea953-404a-44bc-b775-b971276ddc05
+# ╟─d123f5f2-e13b-4cdb-9953-48cc84890f9d
+# ╟─9cfba810-af51-472c-9dab-2eca5ba6482c
+# ╟─26a194da-479d-46f2-93be-b1e5d9edc1fb
+# ╠═2590b8c6-9ecf-4d3c-b953-be03635350e2
+# ╟─6ebc96d7-7bb8-40b1-9d7e-8eca21a29046
+# ╠═b7db583e-43e5-4b3d-b76b-19f5bae30db8
+# ╠═3902ab2d-b5d3-4d37-b8c0-31ad76a38dba
+# ╠═445467c6-5745-4ab0-8017-322e10fcfc65
+# ╠═511f17bd-2206-4fab-b92c-f57282d5cf19
+# ╟─9d762810-e655-4350-8357-faddaeea3263
+# ╠═31c2c341-caf3-43e9-93f5-1476d6165c47
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
