@@ -41,7 +41,7 @@ Lecture content: Curie-Weiss model in Chap 1
 
 Exercises: 1.1 (Bounds on the binomial) and 1.5 (Glauber dynamics). Due on March 2nd at 10 AM
 
-Julia notebook: [Curie-Weiss model](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week1/curie_weiss.html)
+Julia notebook: [Curie-Weiss model](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week1/curie_weiss.jl.html)
 
 **Main lecture**
 
@@ -61,7 +61,7 @@ Lecture content: Random Field Ising Model in Chap 2, see also the [slides about 
 
 Exercises: 2.1 (Gaussian Poincare inequality) & 2.3 (Mean-field algorithm). Due on March 9th at 10 AM
 
-Julia notebook: [RFIM & mean field](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week2/rfim_mean_field.html)
+Julia notebook: [RFIM & mean field](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week2/rfim_mean_field.jl.html)
 
 **Main lecture**
 
@@ -85,7 +85,7 @@ The lectures notes for this chapter are [here](https://github.com/IdePHICS/EPFLD
 
 Exercises (also [here](https://github.com/IdePHICS/EPFLDoctoralLecture2023/blob/main/Resources/Chap4.pdf)): 4.2 (population dynamics), but 4.1 (Erdös-Renyi graphs) is also strongly recommended. Due on March 16th at 10 AM.
 
-Julia notebook: [RFIM on random graphs & Potts model](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week3/rfim_rg.html)
+Julia notebook: [RFIM on random graphs & Potts model](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week3/rfim_rg.jl.html)
 
 
 **Main lecture**

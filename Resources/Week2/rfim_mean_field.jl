@@ -159,7 +159,7 @@ So the energy density in the thermodynamic limit satisfies
 ```math
 \begin{aligned}
 e & = -\partial_\beta \Phi(\beta, \Delta) = -\partial_\beta \phi(m^*(\beta), \beta, \Delta) \\
-& = \underbrace{\partial_1 \phi(m^*(\beta), \beta, \Delta)}_0 \partial_\beta m^*(\beta) + \partial_2 \phi(m^*(\beta), \beta, \Delta)
+& = -\underbrace{\partial_1 \phi(m^*(\beta), \beta, \Delta)}_0 \partial_\beta m^*(\beta) - \partial_2 \phi(m^*(\beta), \beta, \Delta)
 \end{aligned}
 ```
 Through the replica method, we get
@@ -224,14 +224,22 @@ m^* & = \mathbb{E}_h[\mathrm{sign}(h + m^*)] \\
 & = \mathrm{erf} \left( \frac{m^*}{\sqrt{2\Delta}} \right)
 \end{aligned}
 ```
-for the fixed point and
+for the magnetization.
+"""
+
+# ╔═╡ 8b5db58b-eed2-42f7-815a-c98f67862f17
+md"""
+For the energy density, we obtain
 ```math
 \begin{aligned}
-e_{RS}(\Delta) & = \frac{(m^*)^2}{2} - \mathbb{E}_h \left[(h+m^*) \mathrm{sign}(h+m^*)\right] \\
-& = \ldots = -\frac{(m^*)^2}{2} - \sqrt{\frac{2\Delta}{\pi}} e^{-(m^*)^2/2\Delta}
+e_{RS}(\Delta) & = \frac{(m^*)^2}{2} - \mathbb{E}_h \left[(h+m^*) ~\mathrm{sign}(h+m^*)\right] \\
+& = \frac{(m^*)^2}{2} - (m^*)^2 - \mathbb{E}_h \left[h ~\mathrm{sign}(h+m^*)\right] \\
+& = -\frac{(m^*)^2}{2} - \left(\int_{-\infty}^{-m^*} (-h) \frac{e^{-h^2/2\Delta}}{\sqrt{2\pi\Delta}} \mathrm{d}h + \int_{-m^*}^{+\infty} (+h) \frac{e^{-h^2/2\Delta}}{\sqrt{2\pi\Delta}} \mathrm{d}h \right)  \\
+& = -\frac{(m^*)^2}{2} - \frac{1}{\sqrt{2\pi\Delta}} \left(\left[ \Delta e^{-h^2 / 2\Delta} \right]_{-\infty}^{-m^*}  + \left[ -\Delta e^{-h^2 / 2\Delta} \right]_{-m^*}^{+\infty} \right)  \\
+& = -\frac{(m^*)^2}{2} - \frac{1}{\sqrt{2\pi\Delta}} \left(\Delta e^{-(-m^*)^2 / 2\Delta} - (-\Delta) e^{-(-m^*)^2 / 2\Delta} \right)  \\
+& = -\frac{(m^*)^2}{2} - \sqrt{\frac{2\Delta}{\pi}} e^{-(m^*)^2/2\Delta}
 \end{aligned}
 ```
-for the energy density.
 """
 
 # ╔═╡ b7db583e-43e5-4b3d-b76b-19f5bae30db8
@@ -369,7 +377,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.8.5"
 manifest_format = "2.0"
-project_hash = "1d9729dc7c2f55618708357b7e095a97ec67cefb"
+project_hash = "a5a8afac2334a02e355d0ad9339ac1db32960b7e"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -592,9 +600,9 @@ uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
 
 [[deps.FillArrays]]
 deps = ["LinearAlgebra", "Random", "SparseArrays", "Statistics"]
-git-tree-sha1 = "3b245d1e50466ca0c9529e2033a3c92387c59c2f"
+git-tree-sha1 = "d3ba08ab64bdfd27234d3f61956c966266757fe6"
 uuid = "1a297f60-69ca-5386-bcde-b61e274b549b"
-version = "0.13.9"
+version = "0.13.7"
 
 [[deps.FixedPointNumbers]]
 deps = ["Statistics"]
@@ -655,15 +663,15 @@ version = "0.1.4"
 
 [[deps.GR]]
 deps = ["Artifacts", "Base64", "DelimitedFiles", "Downloads", "GR_jll", "HTTP", "JSON", "Libdl", "LinearAlgebra", "Pkg", "Preferences", "Printf", "Random", "Serialization", "Sockets", "TOML", "Tar", "Test", "UUIDs", "p7zip_jll"]
-git-tree-sha1 = "4423d87dc2d3201f3f1768a29e807ddc8cc867ef"
+git-tree-sha1 = "660b2ea2ec2b010bb02823c6d0ff6afd9bdc5c16"
 uuid = "28b8d3ca-fb5f-59d9-8090-bfdbd6d07a71"
-version = "0.71.8"
+version = "0.71.7"
 
 [[deps.GR_jll]]
 deps = ["Artifacts", "Bzip2_jll", "Cairo_jll", "FFMPEG_jll", "Fontconfig_jll", "GLFW_jll", "JLLWrappers", "JpegTurbo_jll", "Libdl", "Libtiff_jll", "Pixman_jll", "Qt5Base_jll", "Zlib_jll", "libpng_jll"]
-git-tree-sha1 = "3657eb348d44575cc5560c80d7e55b812ff6ffe1"
+git-tree-sha1 = "d5e1fd17ac7f3aa4c5287a61ee28d4f8b8e98873"
 uuid = "d2c73de3-f751-5644-a686-071e5b155ba9"
-version = "0.71.8+0"
+version = "0.71.7+0"
 
 [[deps.Gettext_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "Libdl", "Libiconv_jll", "Pkg", "XML2_jll"]
@@ -1212,9 +1220,9 @@ version = "0.7.0"
 
 [[deps.SciMLBase]]
 deps = ["ArrayInterface", "CommonSolve", "ConstructionBase", "Distributed", "DocStringExtensions", "EnumX", "FunctionWrappersWrappers", "IteratorInterfaceExtensions", "LinearAlgebra", "Logging", "Markdown", "Preferences", "RecipesBase", "RecursiveArrayTools", "Reexport", "RuntimeGeneratedFunctions", "SciMLOperators", "SnoopPrecompile", "StaticArraysCore", "Statistics", "SymbolicIndexingInterface", "Tables", "TruncatedStacktraces"]
-git-tree-sha1 = "d78c2134ea1484559aa53cae133c0504ba31abec"
+git-tree-sha1 = "4848a0542bfa419b44b57d7e016cd82479a8a27c"
 uuid = "0bca4576-84f4-4d90-8ffe-ffa030f20462"
-version = "1.91.1"
+version = "1.91.0"
 
 [[deps.SciMLOperators]]
 deps = ["ArrayInterface", "DocStringExtensions", "Lazy", "LinearAlgebra", "Setfield", "SparseArrays", "StaticArraysCore", "Tricks"]
@@ -1360,10 +1368,10 @@ uuid = "410a4b4d-49e4-4fbc-ab6d-cb71b17b3775"
 version = "0.1.6"
 
 [[deps.TruncatedStacktraces]]
-deps = ["InteractiveUtils", "MacroTools", "Preferences"]
-git-tree-sha1 = "6901000d75a14520bdd067fe90b9392384eb04a7"
+deps = ["InteractiveUtils", "MacroTools"]
+git-tree-sha1 = "f7057ba94e63b269125c0db75dcdef913d956351"
 uuid = "781d530d-4396-4725-bb49-402e4bee1e77"
-version = "1.2.0"
+version = "1.1.0"
 
 [[deps.URIs]]
 git-tree-sha1 = "074f993b0ca030848b897beff716d93aca60f06a"
@@ -1652,6 +1660,7 @@ version = "1.4.1+0"
 # ╟─26a194da-479d-46f2-93be-b1e5d9edc1fb
 # ╠═2590b8c6-9ecf-4d3c-b953-be03635350e2
 # ╟─6ebc96d7-7bb8-40b1-9d7e-8eca21a29046
+# ╟─8b5db58b-eed2-42f7-815a-c98f67862f17
 # ╠═b7db583e-43e5-4b3d-b76b-19f5bae30db8
 # ╠═3902ab2d-b5d3-4d37-b8c0-31ad76a38dba
 # ╠═445467c6-5745-4ab0-8017-322e10fcfc65
