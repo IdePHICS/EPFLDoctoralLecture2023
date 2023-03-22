@@ -111,6 +111,12 @@ The lectures notes for this chapter on on chap 14 in the notes.
 
 Exercises: 13.1 (REM as a p-spin model, a replica computation) OR 13.3 (Maximum of Ω Gaussians numbers and denoising). You may do both but it is ok if you just focus on one of them! Dead line is  March 23th at 10 AM.
 
+> Errors in Ex 13.1:
+> - The Hamiltonian for the $p$-spin model is $\mathcal{H}(\mathbf{S}) = -\sum_{i_1 < \cdots < i_p} J_{i_1, \ldots, i_p} S_{i_1} \cdots S_{i_p}$
+> - The interaction terms are all sampled according to a Gaussian distribution with standard deviation $\sigma = \sqrt{\frac{p!}{2 N^{p-1}}}$, that is, $\mathbb{P}(J) = \sqrt{\frac{N^{p-1}}{\pi p!}} \exp\left(-\frac{N^{p-1}}{p!} J^2\right)$
+> - In question 3, this is for $p \to \infty$
+> - In question 4, just show that $\mathbb{E} [\mathcal{H}(\mathbf{S})]$ and $\mathbb{E} [\mathcal{H}(\mathbf{S}) \mathcal{H}(\mathbf{S}')]$ match with the REM for $p \to \infty$
+
 **Main lecture**
 
 <iframe id="kaltura_player" src="https://api.cast.switch.ch/p/113/sp/11300/embedIframeJs/uiconf_id/23448477/partner_id/113?iframeembed=true&playerId=kaltura_player&entry_id=0_9w05zj7v&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_whvu98le" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Random Energy Model, Full solution & Condensation"></iframe>
