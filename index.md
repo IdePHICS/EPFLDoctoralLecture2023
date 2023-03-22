@@ -124,7 +124,11 @@ Exercises: 13.1 (REM as a p-spin model, a replica computation) OR 13.3 (Maximum 
 > Errors in Ex 13.1:
 > - The Hamiltonian for the $p$-spin model is $\mathcal{H}(\mathbf{S}) = -\sum_{i_1 < \cdots < i_p} J_{i_1, \ldots, i_p} S_{i_1} \cdots S_{i_p}$
 > - The interaction terms are all sampled according to a Gaussian distribution with standard deviation $\sigma = \sqrt{\frac{p!}{2 N^{p-1}}}$, that is, $\mathbb{P}(J) = \sqrt{\frac{N^{p-1}}{\pi p!}} \exp\left(-\frac{N^{p-1}}{p!} J^2\right)$
-> - In question 3, this is for $p \to \infty$
+> - In question 2, the actual result you should get is:
+
+$$G(\mathbf{Q}, \widehat{\mathbf{Q}}) = -\frac{\beta^2 n}{4} - \frac{\beta^2}{2} \sum_{a<b} \left(Q^{ab}\right)^p - \mathrm{i} \sum_{a<b} \widehat{Q}^{ab} Q^{ab} - \frac{1}{N} \log \sum_{\mathbf{S}^1, \ldots, \mathbf{S}^n} \exp\left[\mathrm{i} \sum_{a<b} \widehat{Q}^{ab} \left(\mathbf{S}^a \cdot \mathbf{S}^b \right) \right]$$
+
+> - In question 3, this is for $p \to \infty$$
 > - In question 4, just show that $\mathbb{E} [\mathcal{H}(\mathbf{S})]$ and $\mathbb{E} [\mathcal{H}(\mathbf{S}) \mathcal{H}(\mathbf{S}')]$ match with the REM for $p \to \infty$
 
 **Main lecture**
