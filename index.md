@@ -1,6 +1,16 @@
 ![epfl](https://upload.wikimedia.org/wikipedia/commons/f/f4/Logo_EPFL.svg)
 <img src="https://www.epfl.ch/labs/idephics/wp-content/uploads/2020/10/logo_idephics-1536x604.jpg" width="150"/>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+
 ## Staff
 
 Main lecturer: Pr. Florent Krzakala, head of [IdePHICS lab](https://www.epfl.ch/labs/idephics/) (with help from the amazing Pr. Lenka Zdeborová, head of [SPOC lab](https://www.epfl.ch/labs/spoc/)).
