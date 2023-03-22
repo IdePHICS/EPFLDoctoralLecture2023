@@ -109,9 +109,7 @@ Lecture content: We study the Random Energy Model.
 
 The lectures notes for this chapter on on chap 14 in the notes.  
 
-Exercises: 14.1 (REM as a p-spin model, a replica computation) OR 14.3 (Maximum of Ω Gaussians numbers and denoising).  You may do both but it is ok if you just focus on one of them! Dead line is  March 23th at 10 AM.
-
-
+Exercises: 13.1 (REM as a p-spin model, a replica computation) OR 13.3 (Maximum of Ω Gaussians numbers and denoising). You may do both but it is ok if you just focus on one of them! Dead line is  March 23th at 10 AM.
 
 **Main lecture**
 
