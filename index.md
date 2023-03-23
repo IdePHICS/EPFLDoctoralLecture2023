@@ -119,7 +119,7 @@ Lecture content: We study the Random Energy Model.
 
 The lectures notes for this chapter on on chap 13 in the notes.  
 
-Exercises: 13.1 (REM as a p-spin model, a replica computation) OR 13.3 (Maximum of Ω Gaussians numbers and denoising). You may do both but it is ok if you just focus on one of them! Dead line is  March 23th at 10 AM.
+Exercises: 13.1 (REM as a p-spin model, a replica computation) OR 13.3 (Maximum of Gaussians and denoising). You may do both but it is ok if you just focus on one of them! Dead line is  March 23th at 10 AM.
 
 > Errors in Ex 13.1:
 > - The Hamiltonian for the $p$-spin model is $\mathcal{H}(\mathbf{S}) = -\sum_{i_1 < \cdots < i_p} J_{i_1, \ldots, i_p} S_{i_1} \cdots S_{i_p}$
@@ -130,6 +130,8 @@ $$G(\mathbf{Q}, \widehat{\mathbf{Q}}) = -\frac{\beta^2 n}{4} - \frac{\beta^2}{2}
 
 > - In question 3, this is for $p \to \infty$$
 > - In question 4, just show that $\mathbb{E} [\mathcal{H}(\mathbf{S})]$ and $\mathbb{E} [\mathcal{H}(\mathbf{S}) \mathcal{H}(\mathbf{S}')]$ match with the REM for $p \to \infty$
+
+Solutions: [p-spin model](Resources/Week4/pspin.pdf) (PDF), [maximum of Gaussians](Resources/Week4/denoising.jl.html) (Julia notebook)
 
 **Main lecture**
 
