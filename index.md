@@ -143,7 +143,11 @@ Solutions: [p-spin model](Resources/Week4/pspin.pdf) (PDF), [maximum of Gaussian
 
 ### Week 5: Graphical models & Open problems 
 
-Fill up your preference for the open problems here https://docs.google.com/spreadsheets/d/1guW79xOLy_fOBGnfnI6lmXtH2IMZAlom-1hMBxD-rAw/edit?usp=sharing .
+We are arriving at the important moment of chosing your open problem: Fill up your preference for the open problems here [https://docs.google.com/spreadsheets/d/1guW79xOLy_fOBGnfnI6lmXtH2IMZAlom-1hMBxD-rAw/edit?usp=sharing]( https://docs.google.com/spreadsheets/d/1guW79xOLy_fOBGnfnI6lmXtH2IMZAlom-1hMBxD-rAw/edit?usp=sharing ). 
+
+For this week, the exercice is quite simple: Exercise 4.1: Representing problems by graphical models and Belief Propagation
+
+
 Lecture content: graphical models & introduction to open problems 
 
 **Main Lecture** 
