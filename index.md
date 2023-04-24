@@ -39,6 +39,11 @@ Lectures will take place on Fridays (10:00-12:00 in CM 011) and exercise session
 
 Recorded lectures will be made avalible on [mediaspace](https://mediaspace.epfl.ch/channel/PHYS-642%2BStatistical%2Bphysics%2Bfor%2Boptimization%2B%2526%2Blearning%2B23/31507).
 
+Grading: the final mark will be the average of
+
+- either your 4 best homeworks
+- or your 2 best homeworks + a 15-minute presentation of your progress on the open problem
+
 ## Detailed lecture notes
 
 [Chapters 1-13](Resources/PHYS642.pdf) (still in construction)
