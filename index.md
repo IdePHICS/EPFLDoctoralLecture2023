@@ -56,7 +56,7 @@ Lecture content: Curie-Weiss model in Chap 1
 
 Exercises: 1.1 (Bounds on the binomial) and 1.5 (Glauber dynamics). Due on March 2nd at 10 AM
 
-Julia notebook: [Curie-Weiss model](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week1/curie_weiss.jl.html)
+<!-- Julia notebook: [Curie-Weiss model](https://idephics.github.io/EPFLDoctoralLecture2023/Resources/Week1/curie_weiss.jl.html) -->
 
 **Main lecture**
 
